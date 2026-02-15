@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EAC - Portal Edukasi Astronomy</title>
+<style>
+body { margin:0; font-family:sans-serif; background:#0b0f1a; color:white; }
+.stars { position:fixed; top:0; left:0; width:200%; height:200%; background:transparent; box-shadow: 50px 80px #fff, 200px 150px #fff, 400px 300px #fff, 600px 500px #fff; animation: starMove 200s linear infinite; z-index:0; }
+@keyframes starMove { from {transform: translate(0,0);} to {transform: translate(-1000px,-500px);} }
+header { text-align:center; padding:50px 20px; background:rgba(17,26,46,0.8); z-index:1; }
+.logo { width:150px; display:block; margin:0 auto 15px auto; }
+header h1 { margin:0; font-size:36px; color:#4da3ff; }
+nav { text-align:center; padding:15px; background:rgba(17,26,46,0.8); z-index:1; }
+nav a { margin:0 15px; color:#4da3ff; text-decoration:none; font-weight:bold; transition:0.3s; }
+nav a:hover { color:#ffffff; }
+section { padding:40px 20px; max-width:900px; margin:auto; z-index:1; position:relative; }
+h2 { color:#4da3ff; border-bottom:2px solid #4da3ff; display:inline-block; padding-bottom:5px; }
+.card-container { display:flex; flex-wrap:wrap; gap:15px; margin-top:20px; }
+.card { background:rgba(17,24,39,0.8); padding:20px; border-radius:12px; flex:1 1 200px; transition:0.3s; }
+.card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(77,163,255,0.4); }
+footer { text-align:center; padding:20px; background:rgba(17,26,46,0.8); opacity:0.8; margin-top:40px; }
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<header>
+  <img src="logo-eac.png" alt="Logo EAC" class="logo">
+  <h1>EAC</h1>
+  <p>Ekosistem Creator Astronomy - Media Edukasi Luar Angkasa</p>
+</header>
+<nav>
+  <a href="#artikel">Artikel Terbaru</a>
+  <a href="#kategori">Kategori</a>
+</nav>
+<section id="kategori">
+  <h2>Kategori</h2>
+  <div class="card-container">
+    <div class="card">Galaksi</div>
+    <div class="card">Lubang Hitam</div>
+    <div class="card">Supernova</div>
+    <div class="card">Tata Surya</div>
+  </div>
+</section>
+<section id="artikel">
+  <h2>Artikel Terbaru</h2>
+  <div class="card">
+    <h3>Misteri Planet Mars</h3>
+    <p>Mars adalah planet keempat dari Matahari, dikenal sebagai Planet Merah. Planet ini memiliki gunung tertinggi di Tata Surya: Olympus Mons.</p>
+  </div>
+  <div class="card">
+    <h3>Apa Itu Lubang Hitam?</h3>
+    <p>Lubang hitam adalah objek luar angkasa dengan gravitasi sangat kuat sehingga cahaya pun tidak bisa lolos darinya. Sangat misterius dan menarik untuk dipelajari.</p>
+  </div>
+  <div class="card">
+    <h3>Supernova: Ledakan Bintang</h3>
+    <p>Supernova adalah ledakan besar yang terjadi saat bintang masif mencapai akhir hidupnya. Fenomena ini menghasilkan cahaya luar biasa terang.</p>
+  </div>
+  <div class="card">
+    <h3>Galaksi Bimasakti</h3>
+    <p>Galaksi Bimasakti adalah galaksi tempat Bumi berada. Terdiri dari ratusan miliar bintang, termasuk Matahari kita.</p>
+  </div>
+  <div class="card">
+    <h3>Tata Surya Kita</h3>
+    <p>Tata Surya terdiri dari Matahari dan planet-planet, termasuk Bumi. Planet ini bergerak dalam orbit mengelilingi Matahari.</p>
+  </div>
+</section>
+<footer>
+  © 2026 EAC - Edukasi Astronomy
+</footer>
+</body>
+</html>
