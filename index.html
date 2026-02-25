@@ -1,72 +1,256 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EAC - Portal Edukasi Astronomy</title>
+<title>EAC Community</title>
+
 <style>
-body { margin:0; font-family:sans-serif; background:#0b0f1a; color:white; }
-.stars { position:fixed; top:0; left:0; width:200%; height:200%; background:transparent; box-shadow: 50px 80px #fff, 200px 150px #fff, 400px 300px #fff, 600px 500px #fff; animation: starMove 200s linear infinite; z-index:0; }
-@keyframes starMove { from {transform: translate(0,0);} to {transform: translate(-1000px,-500px);} }
-header { text-align:center; padding:50px 20px; background:rgba(17,26,46,0.8); z-index:1; }
-.logo { width:150px; display:block; margin:0 auto 15px auto; }
-header h1 { margin:0; font-size:36px; color:#4da3ff; }
-nav { text-align:center; padding:15px; background:rgba(17,26,46,0.8); z-index:1; }
-nav a { margin:0 15px; color:#4da3ff; text-decoration:none; font-weight:bold; transition:0.3s; }
-nav a:hover { color:#ffffff; }
-section { padding:40px 20px; max-width:900px; margin:auto; z-index:1; position:relative; }
-h2 { color:#4da3ff; border-bottom:2px solid #4da3ff; display:inline-block; padding-bottom:5px; }
-.card-container { display:flex; flex-wrap:wrap; gap:15px; margin-top:20px; }
-.card { background:rgba(17,24,39,0.8); padding:20px; border-radius:12px; flex:1 1 200px; transition:0.3s; }
-.card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(77,163,255,0.4); }
-footer { text-align:center; padding:20px; background:rgba(17,26,46,0.8); opacity:0.8; margin-top:40px; }
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+/* GALAXY BACKGROUND */
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:radial-gradient(white 1px, transparent 1px);
+background-size:50px 50px;
+animation:stars 60s linear infinite;
+z-index:-1;
+opacity:0.2;
+}
+
+@keyframes stars{
+from{transform:translate(0,0);}
+to{transform:translate(-500px,-500px);}
+}
+
+/* OPENING */
+#opening{
+position:fixed;
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:black;
+z-index:10;
+animation:fadeOut 4s forwards;
+}
+
+#opening h1{
+font-size:10px;
+animation:grow 3s forwards;
+}
+
+@keyframes grow{
+to{font-size:40px;}
+}
+
+@keyframes fadeOut{
+0%,80%{opacity:1;}
+100%{opacity:0;visibility:hidden;}
+}
+
+/* ATOM */
+.atom{
+position:absolute;
+top:80px;
+left:50%;
+transform:translateX(-50%);
+width:120px;
+height:120px;
+}
+
+.nucleus{
+width:20px;
+height:20px;
+background:cyan;
+border-radius:50%;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+
+.orbit{
+position:absolute;
+border:1px solid cyan;
+border-radius:50%;
+width:120px;
+height:120px;
+animation:spin 5s linear infinite;
+}
+
+@keyframes spin{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
+
+/* SECTIONS */
+.section{
+display:none;
+padding:20px;
+text-align:center;
+margin-top:180px;
+}
+
+input,button{
+padding:8px;
+margin:5px;
+border:none;
+border-radius:5px;
+}
+
+button{
+background:cyan;
+cursor:pointer;
+}
+
+.card{
+background:#111;
+padding:15px;
+border-radius:10px;
+margin:10px auto;
+max-width:300px;
+}
 </style>
 </head>
+
 <body>
-<div class="stars"></div>
-<header>
-  <img src="logo-eac.png" alt="Logo EAC" class="logo">
-  <h1>EAC</h1>
-  <p>Ekosistem Creator Astronomy - Media Edukasi Luar Angkasa</p>
-</header>
-<nav>
-  <a href="#artikel">Artikel Terbaru</a>
-  <a href="#kategori">Kategori</a>
-</nav>
-<section id="kategori">
-  <h2>Kategori</h2>
-  <div class="card-container">
-    <div class="card">Galaksi</div>
-    <div class="card">Lubang Hitam</div>
-    <div class="card">Supernova</div>
-    <div class="card">Tata Surya</div>
-  </div>
-</section>
-<section id="artikel">
-  <h2>Artikel Terbaru</h2>
-  <div class="card">
-    <h3>Misteri Planet Mars</h3>
-    <p>Mars adalah planet keempat dari Matahari, dikenal sebagai Planet Merah. Planet ini memiliki gunung tertinggi di Tata Surya: Olympus Mons.</p>
-  </div>
-  <div class="card">
-    <h3>Apa Itu Lubang Hitam?</h3>
-    <p>Lubang hitam adalah objek luar angkasa dengan gravitasi sangat kuat sehingga cahaya pun tidak bisa lolos darinya. Sangat misterius dan menarik untuk dipelajari.</p>
-  </div>
-  <div class="card">
-    <h3>Supernova: Ledakan Bintang</h3>
-    <p>Supernova adalah ledakan besar yang terjadi saat bintang masif mencapai akhir hidupnya. Fenomena ini menghasilkan cahaya luar biasa terang.</p>
-  </div>
-  <div class="card">
-    <h3>Galaksi Bimasakti</h3>
-    <p>Galaksi Bimasakti adalah galaksi tempat Bumi berada. Terdiri dari ratusan miliar bintang, termasuk Matahari kita.</p>
-  </div>
-  <div class="card">
-    <h3>Tata Surya Kita</h3>
-    <p>Tata Surya terdiri dari Matahari dan planet-planet, termasuk Bumi. Planet ini bergerak dalam orbit mengelilingi Matahari.</p>
-  </div>
-</section>
-<footer>
-  © 2026 EAC - Edukasi Astronomy
-</footer>
+
+<div id="opening">
+<h1>EAC COMMUNITY</h1>
+</div>
+
+<div class="atom">
+<div class="orbit"></div>
+<div class="nucleus"></div>
+</div>
+
+<!-- LOGIN -->
+<div id="login-page" class="section">
+<h2>Login Member EAC</h2>
+<input type="text" id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+<br>
+<button onclick="login()">Login</button>
+<p id="login-info"></p>
+</div>
+
+<!-- EDUKASI -->
+<div id="edukasi" class="section">
+<h2>Selamat Datang di Portal Edukasi EAC</h2>
+
+<div class="card">
+<h3>Planet Mars</h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" width="100%">
+<p>Mars adalah planet keempat dari Matahari.</p>
+<a href="https://id.wikipedia.org/wiki/Mars" target="_blank">
+<button>Baca Artikel</button>
+</a>
+</div>
+
+<div class="card">
+<h3>Black Hole</h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Black_hole_-_Messier_87_crop_max_res.jpg" width="100%">
+<p>Black hole memiliki gravitasi sangat kuat.</p>
+<a href="https://id.wikipedia.org/wiki/Lubang_hitam" target="_blank">
+<button>Baca Artikel</button>
+</a>
+</div>
+
+</div>
+
+<!-- AI -->
+<div id="ai-section" class="section">
+<h3>AI Astronomy EAC</h3>
+<input type="text" id="ai-input" placeholder="Tanya tentang astronomi...">
+<button onclick="tanyaAI()">Tanya</button>
+<p id="ai-output"></p>
+</div>
+
+<!-- EVENT -->
+<div id="event-section" class="section">
+<h3>Event Astronomi</h3>
+<ul id="event-list"></ul>
+</div>
+
+<script>
+
+/* LOGIN */
+function login(){
+let user=document.getElementById("username").value;
+let pass=document.getElementById("password").value;
+
+if(user==="eacmember" && pass==="12345"){
+localStorage.setItem("login","true");
+showPortal();
+}else{
+document.getElementById("login-info").innerText="Login gagal!";
+}
+}
+
+function showPortal(){
+document.getElementById("login-page").style.display="none";
+document.getElementById("edukasi").style.display="block";
+document.getElementById("ai-section").style.display="block";
+document.getElementById("event-section").style.display="block";
+}
+
+window.onload=function(){
+setTimeout(()=>{
+if(localStorage.getItem("login")==="true"){
+showPortal();
+}else{
+document.getElementById("login-page").style.display="block";
+}
+},4000);
+}
+
+/* AI */
+function tanyaAI(){
+let input=document.getElementById("ai-input").value.toLowerCase();
+let output="";
+
+if(input.includes("mars")){
+output="Mars adalah planet merah dan memiliki gunung tertinggi di tata surya.";
+}
+else if(input.includes("black hole")){
+output="Black hole adalah objek dengan gravitasi sangat kuat.";
+}
+else if(input.includes("galaksi")){
+output="Galaksi adalah kumpulan miliaran bintang.";
+}
+else{
+output="AI EAC belum punya data tentang itu.";
+}
+
+document.getElementById("ai-output").innerText=output;
+}
+
+/* EVENT */
+let events=[
+{tanggal:"3 Maret 2026",nama:"Hujan Meteor"},
+{tanggal:"15 Maret 2026",nama:"Gerhana Bulan"},
+{tanggal:"28 Maret 2026",nama:"Konjungsi Planet"}
+];
+
+let list=document.getElementById("event-list");
+events.forEach(e=>{
+let li=document.createElement("li");
+li.innerText=e.tanggal+" - "+e.nama;
+list.appendChild(li);
+});
+
+</script>
+
 </body>
-</html>
+  </html>
